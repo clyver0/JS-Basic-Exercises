@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background: midnightblue;
+			color:  lightslategrey;
+			font-family: Courier;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Js exercise 2
+	</title>
+</head>
+<body>
+<p><h1> Js exercise 2 </h1></p>
+<p><h3> Write a JavaScript program to copy a string to the clipboard </h3></p>
+
+Write whatever text you want to copy: <br> 
+<input type="text" id="TextLabel"> <br> <br>
+<button name="button" onclick="CopyFunction()">Copy</button>
+<a id="demo"></a> <br><br>
+Paste it here: <br>
+<input text></input>
+
+<script>
+	let text;
+function CopyFunction(){
+	text = document.getElementById("TextLabel").value;
+	navigator.clipboard.writeText(text);
+	document.getElementById("TextLabel").value='';
+	document.getElementById("demo").innerHTML = "The text got successfully copied!";
+	//}
+}
+
+
+</script>
+
+</body>
+</html>
