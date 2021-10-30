@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background: midnightblue;
+			color:  lightslategrey;
+			font-family: Courier;
+		}
+		button{
+			font-family: Courier;
+		}
+		input{
+			font-family: Courier;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Js exercise 3
+	</title>
+</head>
+<body>
+<p><h1> Js exercise 3 </h1></p>
+<p><h3> Write a JavaScript program to converts a comma-separated values (CSV) string to a 2D array </h3></p>
+
+Write your favorite movies. Separate them with comma: <br> 
+<input type="text" id="TextLabel">
+<button name="button" onclick="Movie()">Submit</button>
+<p id="demo"></p>
+
+
+<script>
+
+let [text,i,counting,output,column] = ["",0,0,"",0];
+let td_text=[];
+let row = 0;
+function Movie(){
+//Get input
+text = document.getElementById("TextLabel").value.split(',');
+//Generate 2d array
+	for (let i = 0; i < text.length; i++){
+	td_text.push([text[0+counting],text[1+counting],text[2+counting]]);
+	counting += 3;
+	output +=
+		td_text[column][row] +
+		(td_text.length==text.length ? "." : ", ");
+	row++;
+
+if (row==3){
+		column++;
+		row = 0;
+		output += " <br>"
+	}
+	}
+	output = "Your favorite movies are: <br>" + output;
+	document.getElementById("demo").innerHTML = output;
+}
+/*
+alert(td_text[0][0] + " " + td_text[0][1] + " " + td_text[0][2] +
+		  td_text[1][0] + " " + td_text[1][1] + " " + td_text[1][2] +
+		  td_text[2][0] + " " + td_text[2][1] + " " + td_text[2][2]);
+}
+*/
+</script>
+
+</body>
+</html>
